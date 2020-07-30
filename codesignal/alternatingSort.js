@@ -1,5 +1,5 @@
 function alternatingSort(a) {
-  const b = [];
+	const b = [];
   
   let j = a.length - 1;
   for (i = 0; i <= a.length - 1; i++) {

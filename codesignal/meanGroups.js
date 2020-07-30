@@ -6,7 +6,7 @@ function meanGroups(a) {
     
     
   // helper function to get mean value of an array
-  function getMean(arr) {
+	function getMean(arr) {
       let total = 0;
       for (let element of arr) {
           total = total + element;
@@ -16,19 +16,21 @@ function meanGroups(a) {
   }
   
   
-  const groups = [[0]];
+	const frequencyMap = {};
   
-  for (i = 0; i <= a.length; i++) {
-      const mean = getMean(a[i]);
-      
-      for (let group of groups) {
-          if (getMean(a[group[0][0]]) === mean) {
-              group[0].push(i)
-          } else {
-              group
-          }
-      }
-  }
+  for (i = 0; i < a.length; i++) {
+		let currentMean = getMean(a[i]);
+		if (frequencyMap[currentMean]) {
+			frequencyMap[currentMean].push(i);
+		} else {
+			frequencyMap[currentMean] = [i];
+		}
+	}
+
+	const groups = [];
+
+	for (let mean in frequencyMap) {
+		
+	}
   
 }
-

@@ -29,6 +29,21 @@ const rotateArray2 = function(nums, k) {
   return nums;
 }
 
-let a = [1, 2, 3, 4, 5, 6, 7];
+// 3. "splice" solution
+const rotateArray3 = function(nums, k) {
+  k %= nums.length;
 
-console.log(rotateArray2(a, 3));
+  nums = nums.splice(nums.length - k, k).concat(nums);
+
+  return nums;
+}
+
+
+
+let a = [1, 2, 3, 4, 5, 6, 7];
+let b = new Array(50000)
+b.fill(6)
+
+console.time("runtime");
+console.log(rotateArray1(b, 40000));
+console.timeEnd("runtime");

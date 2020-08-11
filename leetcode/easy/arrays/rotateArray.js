@@ -41,9 +41,10 @@ const rotateArray3 = function(nums, k) {
 
 
 let a = [1, 2, 3, 4, 5, 6, 7];
-let b = new Array(50000)
+
+let b = new Array(100000)
 b.fill(6)
 
 console.time("runtime");
-console.log(rotateArray1(b, 40000));
+console.log(rotateArray2(b, 80000));
 console.timeEnd("runtime");

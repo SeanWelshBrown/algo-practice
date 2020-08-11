@@ -1,5 +1,5 @@
-// SORTING SOLUTION
-var merge = function(intervals) {
+// SORTING SOLUTION 1
+const merge1 = function(intervals) {
   // Sort array by first element, all ranges will be sequential
   intervals.sort((a, b) => a[0] - b[0]);
   
@@ -26,3 +26,27 @@ var merge = function(intervals) {
   
   return intervals;
 };
+
+
+// SORTING SOLUTION 2
+const merge = function(intervals) {
+  // Sort array by first element, all ranges will be sequential
+  intervals.sort((a, b) => a[0] - b[0]);
+  
+  // Array to be returned
+  const merged = [];
+  
+  for (let interval of intervals) {
+      // If merged array is empty, or the last element of the last
+      // interval is less than the current, push the current into merged
+      if (merged.length === 0 || merged[merged.length - 1][1] < interval[0]) {
+          merged.push(interval);
+      // Else we merge the current interval into the last by checking which
+      // range has a higher maximum value
+      } else {
+          merged[merged.length - 1][1] = Math.max(merged[merged.length - 1][1], interval[1]);
+      }
+  }
+  
+  return merged;
+}

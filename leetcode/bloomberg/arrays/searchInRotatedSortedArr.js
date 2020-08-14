@@ -38,8 +38,8 @@ const search = function(nums, target) {
   // Edge case if a single element array happens to be the target
   if (nums[0] === target) return 0;
   
-  // If first element is less than last, nums array has not been
-  // rotated, and a regular binary search will work
+  // If the first element is less than the last, nums array has not
+  // been rotated, and a regular binary search will work
   if (nums[0] < nums[nums.length - 1]) {
       return binarySearch(nums, target);
   }
@@ -49,14 +49,12 @@ const search = function(nums, target) {
   
   if (nums[rotationIndex] === target) return rotationIndex;
   
-  let left;
-  let right;
+  let left = 0;
+  let right = nums.length - 1;
   if (target >= nums[0]) {
-      left = 0;
       right = rotationIndex - 1;
   } else {
       left = rotationIndex;
-      right = nums.length - 1;
   }
   
   return binarySearch(nums, target, left, right);

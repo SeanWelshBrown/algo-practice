@@ -8,8 +8,8 @@ const isValid = function(s) {
   }
   let bracketStack = [];
   
-  for (let i = 0; i < s.length; i++) {
-      
+  for (let i = 0; i < s.length; i++) {  
+    
       if (bracketMap[s[i]]) {
           if (bracketMap[s[i]] === bracketStack[bracketStack.length - 1]) {
               bracketStack.pop();
@@ -18,7 +18,6 @@ const isValid = function(s) {
       }
       
       bracketStack.push(s[i]);
-
   }
 
   return bracketStack.length === 0 ? true : false

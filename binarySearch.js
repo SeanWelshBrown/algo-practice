@@ -16,5 +16,6 @@ const binarySearch = function(arr, target) {
   }
 }
 
+// TESTS
 let a = [1, 2, 3, 4, 5, 6, 7];
 console.log(binarySearch(a, 5));

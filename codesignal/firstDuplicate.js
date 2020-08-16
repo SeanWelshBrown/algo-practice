@@ -14,8 +14,7 @@ function firstDuplicate(a) {
   return -1;
 }
 
-
-
+// TESTS
 let arr = [1, 2, 3, 4, 3, 2, 5, 4]
 let arr2 = ["test", 3, 4, "no", 5, "blah", "no", 5, "test", "yup"]
 

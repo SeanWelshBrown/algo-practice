@@ -45,4 +45,5 @@ function merge(a, b) {
 
 // TESTS
 let arr1 = [6, 3, 2, 4, 0, 5, 1]
-console.log(mergeSort(arr1));
+let arr2 = [11, 4, 2, 7, 12, 8, 5]
+console.log(mergeSort(arr2));

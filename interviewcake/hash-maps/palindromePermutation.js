@@ -1,7 +1,9 @@
+// Check if any permutation of the input is a palindrome
+
+
 // Cleaner solution using Set to check for odd numbers
 function hasPalindromePermutation(theString) {
 
-  // Check if any permutation of the input is a palindrome
 
   let charSet = new Set();
   

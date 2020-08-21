@@ -33,18 +33,31 @@ class Node {
       return null;
     }
   }
+
+  printInOrder(node = this) {
+    if (node === null) {
+      return;
+    }
+  
+    printInOrder(node.left);
+    console.log(node.data);
+    printInOrder(node.right);
+  }
+
 }
 
 
-// TESTS
-let node = new Node(20);
-node.insert(50)
-node.insert(10)
-node.insert(8)
-node.insert(32)
-node.insert(18)
-node.insert(5)
-node.insert(22)
-node.insert(40)
 
-console.log(node.contains(18))
+// TESTS
+let bst = new Node(20);
+bst.insert(50)
+bst.insert(10)
+bst.insert(8)
+bst.insert(32)
+bst.insert(18)
+bst.insert(5)
+bst.insert(22)
+bst.insert(40)
+
+// printInOrder();
+bst.printInOrder();

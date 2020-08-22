@@ -18,8 +18,9 @@ class BinaryTreeNode {
 
 
 // Determine if the tree is superbalanced
-// BFS implemented iteratively
-function isBalanced(treeRoot) {
+
+// DFS implemented iteratively
+function isBalanced2(treeRoot) {
 
   if (!treeRoot) return true;
   
@@ -36,10 +37,10 @@ function isBalanced(treeRoot) {
     if (!node.left && !node.right) {
       
       if (depths.indexOf(depth) === -1) {
-        
+
         depths.push(depth);
 
-        if (depths.length > 2 || (depths.length === 2 && Math.abs(depths[1] - depths[0]) > 1)) {
+        if (depths.length > 2 || (depths.length === 2 && Math.abs(depths[0] - depths[1]) > 1)) {
           return false;
         }
       }
@@ -58,10 +59,35 @@ function isBalanced(treeRoot) {
 }
 
 
+// DFS implemented recursively
+function isBalanced(treeRoot) {
 
+  if (!treeRoot) return true;
 
+  let depths = [];
+  function checkNode(node, depth = 0) {
+    if (!node.left && !node.right) {
+      if (depths.indexOf(depth) === -1) {
+        depths.push(depth);
+      }
+    } else {
+      if (node.left) {
+        checkNode(node.left, depth + 1);
+      }
+      if (node.right) {
+        checkNode(node.right, depth + 1);
+      }
+    }
 
+    if (depths.length > 2 || (depths.length === 2 && Math.abs(depths[0] - depths[1]) > 1)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
+  return checkNode(treeRoot)
+}
 
 
 

@@ -1,3 +1,7 @@
+// Import validate function from separate file
+const isValidBST = require('./validateBst');
+
+
 class Node {
   constructor(data) {
     this.data = data;
@@ -39,9 +43,9 @@ class Node {
       return;
     }
   
-    printInOrder(node.left);
+    this.printInOrder(node.left);
     console.log(node.data);
-    printInOrder(node.right);
+    this.printInOrder(node.right);
   }
 
 }
@@ -59,5 +63,6 @@ bst.insert(5)
 bst.insert(22)
 bst.insert(40)
 
-// printInOrder();
 bst.printInOrder();
+
+console.log(isValidBST(bst));

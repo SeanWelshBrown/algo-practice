@@ -65,6 +65,7 @@ function isBalanced(treeRoot) {
   if (!treeRoot) return true;
 
   let depths = [];
+  // recursive function
   function checkNode(node, depth = 0) {
     if (!node.left && !node.right) {
       if (depths.indexOf(depth) === -1) {

@@ -5,8 +5,8 @@ const isValidBST = function(node, min = null, max = null) {
   // Edge case for empty tree
   if (!node) return true;
   
-  if (min !== null && node.data <= min) return false;
   if (max !== null && node.data >= max) return false
+  if (min !== null && node.data <= min) return false;
   
   if (node.left && !isValidBST(node.left, min, node.data)) return false;
   if (node.right && !isValidBST(node.right, node.data, max)) return false;

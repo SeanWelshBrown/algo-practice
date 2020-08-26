@@ -15,14 +15,14 @@ function zigzagLevelOrder(root) {
       for (let i = 0; i < levelLength; i++) {
           let node = queue.shift();
           
-          if (node.left !== null) queue.push(node.left);
-          if (node.right !== null) queue.push(node.right);
-          
           if (level % 2) {
               levels[level].unshift(node.val);
           } else {
               levels[level].push(node.val);
           }
+
+          if (node.left !== null) queue.push(node.left);
+          if (node.right !== null) queue.push(node.right);
       }
       
       level++;

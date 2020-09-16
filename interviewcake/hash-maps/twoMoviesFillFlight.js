@@ -1,6 +1,7 @@
+// Determine if two movie runtimes add up to the flight length
+
 function canTwoMoviesFillFlight(movieLengths, flightLength) {
 
-  // Determine if two movie runtimes add up to the flight length
   let movieSet = new Set();
   
   for (let i = 0; i < movieLengths.length; i++) {

@@ -20,3 +20,6 @@ function threeNumberSum(array, targetSum) {
 			}
 		}
 	}
+	
+	return result;
+}

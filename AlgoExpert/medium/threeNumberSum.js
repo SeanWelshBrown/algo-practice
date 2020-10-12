@@ -16,9 +16,7 @@ function threeNumberSum(array, targetSum) {
 			} else if (currentSum === targetSum) {
 				result.push([array[i], array[left], array[right]]);
 				left++;
+				right--;
 			}
 		}
 	}
-	
-	return result;
-}
